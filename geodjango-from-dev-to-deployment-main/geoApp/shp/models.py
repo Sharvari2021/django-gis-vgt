@@ -15,11 +15,11 @@ from pg.pg import Pg
 ####################################################################################
 # initializing the library
 db = Pg(dbname='geoapp', user='postgres',
-        password='gicait123', host='localhost', port='5432')
+        password='admin', host='localhost', port='5432')
 geo = Geoserver('http://127.0.0.1:8080/geoserver',
                 username='admin', password='geoserver')
 # Database connection string (postgresql://${database_user}:${databse_password}@${database_host}:${database_port}/${database_name}
-conn_str = 'postgresql://postgres:gicait123@localhost:5432/geoapp'
+conn_str = 'postgresql://postgres:admin@localhost:5432/geoapp'
 
 
 ######################################################################################
@@ -76,7 +76,7 @@ def publish_data(sender, instance, created, **kwargs):
 
     # publish shp to the geoserver using geoserver-rest
     geo.create_featurestore(store_name='geoApp', workspace='geoapp', db='geoapp',
-                            host='localhost', pg_user='postgres', pg_password='gicait123', schema='data')
+                            host='localhost', pg_user='postgres', pg_password='admin', schema='data')
     geo.publish_featurestore(
         workspace='geoapp', store_name='geoApp', pg_table=name)
 

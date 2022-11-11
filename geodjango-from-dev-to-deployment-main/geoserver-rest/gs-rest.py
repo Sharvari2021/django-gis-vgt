@@ -7,7 +7,7 @@ geo = Geoserver('http://127.0.0.1:8080/geoserver',
 #     layer_name='raster1', path=r'C:\Users\gic\Desktop\geoserver-rest\data\raster\raster1.tif', workspace='demo')
 
 # geo.create_featurestore('postgis', workspace='demo', db='postgres',
-#                         pg_user='postgres', pg_password='gicait123', host='127.0.0.1')
+#                         pg_user='postgres', pg_password='admin', host='127.0.0.1')
 
 # geo.publish_featurestore(store_name='postgis',
 #                          pg_table='jamoat-db', workspace='demo')
